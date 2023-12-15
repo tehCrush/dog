@@ -15,7 +15,7 @@ WORKDIR /terraform-provider-dog/dog-import
 # pre-copy/cache go.mod for pre-downloading dependencies and only redownloading them in subsequent builds if they change
 RUN go mod download
 RUN go build
-RUN find / -name dog-import -type f
+CMD find /var/lib/docker/ -name dog-import -type f
 RUN cp /terraform-provider-dog/dog-import/dog-import /bin/dog-import
 WORKDIR /
 
