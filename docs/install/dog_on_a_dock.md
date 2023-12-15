@@ -37,7 +37,7 @@ There are multiple ways to install the Open Source versions of Docker/Compose
 This will clone repos, build and start all dog containers:
 
 ```bash
-git clone https://github.com/relaypro-open/dog.git
+git clone https://github.com/tehCrush/dog.git
 cd dog
 
 ./dog_on_a_dock.sh
