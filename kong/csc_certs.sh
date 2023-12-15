@@ -1,10 +1,10 @@
 #!/bin/bash
 
-HTTPD=`curl -A "Web Check" -sL --connect-timeout 3 -w "%{http_code}\n" "http://csc:8000/csc/register" -o /dev/null`
+HTTPD=`curl -A "Web Check" -sL --connect-timeout 3 -w "%{http_code}\n" "http://csc:9000/csc/register" -o /dev/null`
 until [ "$HTTPD" == "200" ]; do
     printf '.'
     sleep 3
-    HTTPD=`curl -A "Web Check" -sL --connect-timeout 3 -w "%{http_code}\n" "http://csc:8000/csc/register" -o /dev/null`
+    HTTPD=`curl -A "Web Check" -sL --connect-timeout 3 -w "%{http_code}\n" "http://csc:9000/csc/register" -o /dev/null`
 done
 
 passkey=$(curl -s http://csc:8000/csc/register | jq -r .passkey)
